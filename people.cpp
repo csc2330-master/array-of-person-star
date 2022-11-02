@@ -49,6 +49,12 @@ string People::ToString() const {
     return ss.str();
 }
 
+People::~People() {
+    for (int i = 0; i < _size; ++i) {
+        delete _data[i];
+    }
+}
+
 
 
 

@@ -14,12 +14,13 @@ private:
     unsigned int _size;
 public:
     People();
+    ~People();
     bool AddPerson(const Person& person);
     bool AddPerson(const string& name, unsigned int age = 0);
     const Person* Get(unsigned int index)const;
     unsigned int Size()const;
     string ToString()const;
-    // ?
+
 };
 
 
