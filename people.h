@@ -6,14 +6,14 @@
 #define ARRAY_OF_PERSON_STAR_PEOPLE_H
 
 #include "person.h"
-const unsigned int MAX = 10;
 
 class People {
 private:
-    Person* _data[MAX];
+    Person** _data;
     unsigned int _size;
+    unsigned int _max;
 public:
-    People();
+    People(unsigned int max);
     ~People();
     bool AddPerson(const Person& person);
     bool AddPerson(const string& name, unsigned int age = 0);

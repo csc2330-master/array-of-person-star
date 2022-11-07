@@ -10,14 +10,15 @@
 using std::string;
 using std::stringstream;
 
-People::People(): _size(0) {
-    for (int i = 0; i < MAX; ++i) {
+People::People(unsigned int max): _size(0), _max(max) {
+    _data = new Person*[_max];
+    for (int i = 0; i < _max; ++i) {
         _data[i] = nullptr;
     }
 }
 
 bool People::AddPerson(const Person &person) {
-    if (_size == MAX)
+    if (_size == _max)
         return false;
     _data[_size++] = new Person(person);
     return true;
@@ -53,6 +54,7 @@ People::~People() {
     for (int i = 0; i < _size; ++i) {
         delete _data[i];
     }
+    delete[] _data;
 }
 
 

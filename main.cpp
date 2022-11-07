@@ -7,12 +7,12 @@ using std::endl;
 #include "people.h"
 
 int main() {
-    People list;
+    People list(5);
     list.AddPerson("Joe");
     list.AddPerson("Anna");
     cout << list.ToString() << endl;
 
-    People* another = new People;
+    People* another = new People(2);
     another->AddPerson("Jenny");
     another->AddPerson("Forest");
     another->AddPerson("Lt Dan");
